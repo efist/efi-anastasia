@@ -1,0 +1,102 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+table.products{
+  width: 80%;
+  margin: auto;
+  border-collapse: collapse;
+  font-size: 16px;
+  
+  td {border: 1px solid lightgrey;}
+  td.name{
+    padding: 10px;
+    border-left: 0px;
+  }
+  td.shop{
+    max-width: 100px;
+  }
+  p.shop{word-wrap: break-word;font-size: 0.9rem;}
+  td.availability{
+    //border-right: 0px;
+    border-left: 0px;
+    padding: 10px;
+    text-align: center;
+  }
+  td.price{
+    text-align: center;
+    padding: 10px;
+    border-left: 0px;
+  }
+  
+  td.image-cell{ text-align: center; }
+  
+  td, th{
+    //padding: 15px 10px;
+    //border-bottom: 1px dashed grey;
+  }
+  
+  td.shop{ text-align: center; }
+  
+  td.sum{
+    text-align: right;
+    font-weight: bold;
+    border: 0px;
+  }
+  td.sum-caption{
+    text-align: right;
+    font-weight: bold;
+    border: 0px;
+    padding: 10px;
+    padding-bottom: 20px;
+  }
+  td.sum-price{
+    text-align: center;
+    font-weight: bold;
+    border: 0px;
+    padding: 10px;
+    padding-bottom: 20px;
+  }
+    td.name{ text-align: center; }
+  
+  table.product{
+    
+    td,th{ padding: 0 0; border: none; }
+    caption{
+      text-align:left;
+      font-size: 18px;
+      margin: 20px 0;
+    }
+    th {
+      padding-right: 10px;
+      text-align: left;
+    }
+    
+    p { margin: 0; padding:0; }
+    
+    p.shop { line-height: 20px; }
+    
+    img.shop{margin-right: 10px; vertical-align: middle;}
+  }
+  
+}
+p.explain{
+  text-align: center;
+  font-style: italic;
+}
+p.cost{
+
+  font-size: 30px;
+  text-align: center;
+  span{
+
+    font-size: 40px;
+    color: dodgerblue;
+  }
+}
+hr.products{
+//width: 800px;
+border: 0;
+height: 0;
+margin-top: 100px;
+margin-bottom: 100px;
+}

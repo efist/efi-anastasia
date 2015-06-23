@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %title Ecommerce
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    %ul.header
+      %li.title
+        %a{:href => "/"} Shopping Comparison Agent
+      - if current_user.nil?
+        %li
+          %a{:href => "/login"} σύνδεση
+        %li
+          %a{:href => "/signup"} εγγραφή
+      - else
+        %li
+          %a{:href => "/skus/new"} εισαγωγή
+        %li
+          %a{:href => user_path(current_user)} τα προϊόντα μου
+        %li
+          %a{:href => "/logout"} έξοδος #{current_user.name}
+    = yield

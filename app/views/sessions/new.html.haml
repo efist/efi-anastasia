@@ -1,0 +1,22 @@
+%h1 Σύνδεση
+= form_tag sessions_path do
+  %table.credentials
+    %tr
+      %td
+        = label_tag :Όνομα
+      %td
+        = text_field_tag :name, params[:name]
+      %tr
+        %td
+          = label_tag :Κωδικός
+        %td
+          = password_field_tag :password
+      %tr
+        %td
+        %td
+          = submit_tag "Σύνδεση", class: :button
+.login-info
+  %p
+    o χρήστης μπορεί να συνδεθεί με τα στοιχεία που δήλωσε κατά την εγγραφή του.
+    Δοκιμάστε να συνθεθείτε δίνοντας σαν όνομα efi και κωδικό efi , 
+    ή anastasia και anastasia αντίστοιχα.

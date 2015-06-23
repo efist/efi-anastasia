@@ -1,0 +1,23 @@
+%h1 Επιθεώρηση προϊόντων μου
+
+%h2 Διαθεσιμότητα
+%p.explain Επιλογή καταστημάτων με κριτήριο πρώτα τη διαθεσιμότητά τους και μετά την τιμή.
+= render partial: "products/products", locals: {products: @fastest_products}
+%p.cost
+  Το κόστος είναι:
+  %span #{'%.2f' % @fastest_products_cost}€
+%hr.products
+%h2 Φτηνότερα
+%p.explain Επιλογή καταστημάτων με κριτήριο την τιμή τους.
+= render partial: "products/products", locals: {products: @cheapest_products}
+%p.cost
+  Το κόστος είναι:
+  %span #{'%.2f' % @cheapest_products_cost}€
+%hr.products
+%h2 Μικρότερος αριθμός καταστημάτων
+%p.explain Επιλογή καταστημάτων με κριτήριο το να επιλεχθούν λιγότερα καταστήματα.
+= render partial: "products/products", locals: {products: @common_shop_products}
+%p.cost
+  Το κόστος είναι:
+  %span #{'%.2f' % @common_shop_products_cost}€
+    

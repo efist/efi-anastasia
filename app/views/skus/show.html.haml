@@ -1,0 +1,11 @@
+%p#notice.center= notice
+%h2.center
+  =@sku.name
+%p.center
+  %b Price max:
+  #{@sku.price_max}€
+%p.center
+  %b Price min:
+  #{@sku.price_min}€
+
+= render partial: "products/products", locals: {products: @sku.products}

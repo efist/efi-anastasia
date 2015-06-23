@@ -1,0 +1,13 @@
+%ul
+  - skus.each do |sku|
+    %li{id: "sku#{sku.id}"}
+      %p.name= sku.name
+      .img-container
+        %img{src: sku.image}
+        /%img{src: 'image.svg'}
+      %p prices from #{sku.price_min}€ to #{sku.price_max}€
+      -if current_user
+        -unless userskus.include?(sku)
+          %a.button{href: "/list/add/?id=#{sku.id}"} add to cart
+        -else
+          %a.remove.button{href: "/list/remove/?id=#{sku.id}"} remove from cart

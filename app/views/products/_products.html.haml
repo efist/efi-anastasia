@@ -1,0 +1,74 @@
+%table.products
+  %tr
+    %th Κατάστημα
+    %th Προϊόν
+    %th Διαθεσιμότητα
+    %th Τιμή
+  - shops_products_hash(products).each do |shop, products|
+    %tr.shop
+      %td.shop{rowspan: products.size}
+        = shop.name
+        %br
+        %br
+        %img.shop{src: shop.image_url}
+        %br
+        -if shop.shipping_min_price
+          %p.shop
+            ελάχιστα
+            μεταφορικά
+            #{shop.shipping_min_price}€
+        -if shop.free_shipping and shop.free_shipping_from
+          %p.shop
+            δωρεάν
+            μεταφορικά
+            από #{shop.free_shipping_from}€
+        -if shop.reviews_count and shop.review_score
+          %p.shop
+            #{shop.reviews_count} άτομα το βαθμολογούν με #{shop.review_score}
+      -sum = 0
+      -products.each_with_index do |product, index|
+        -sum += product.price
+        -if index > 0
+          %tr.product
+            %td.name
+              =product.name
+              %br
+              %br
+                %img{src: product.sku.image}
+            %td.availability #{product.availability}
+            %td.price #{'%.2f' % product.price}€
+        -else
+          %td.name
+            =product.name
+            %br
+            %br
+              %img{src: product.sku.image}
+          %td.availability #{product.availability}
+          %td.price  #{'%.2f' % product.price}€
+      %tr.sum
+        %td.sum-caption{colspan:3} σύνολο:&nbsp;&nbsp;&nbsp;
+        %td.sum-price #{'%.2f' % sum}€
+
+
+-# %table.products
+-#   - products.each do |product|
+-#     %tr
+-#       %td.image-cell
+-#         %img{src: product.sku.image}
+-#       %td
+-#         %table.product
+-#           %caption= product.name
+-#           %tr
+-#             %th κατάστημα:
+-#             %td
+-#               %p.shop
+-#                 %img.shop{src: product.shop.image_url}
+-#                 = product.shop.name
+-#           %tr
+-#             %th διαθεσιμότητα:
+-#             %td
+-#               %p= product.availability
+-#           %tr
+-#             %th τιμή:
+-#             %td
+-#               %p #{product.price}€

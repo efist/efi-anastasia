@@ -1,0 +1,17 @@
+%h1 Εισαγωγή προϊόντων
+-flash.each do |key, value|
+  %p.center.alert
+    =value
+%p.center δώστε τοv κωδικό που χρησιμοποιεί το Skroutz για αυτό το  Sku
+= form_tag("/skus", method: "post") do
+  %table.credentials
+    %tr
+      %td
+        = label_tag :Κωδικός_SKU
+      %td
+        = text_field_tag :sku_id
+    %tr
+      %td
+      %td
+        = submit_tag 'Εισαγωγή'
+      %td

@@ -1,0 +1,22 @@
+= form_for @sku do |f|
+  - if @sku.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@sku.errors.count, "error")} prohibited this sku from being saved:"
+      %ul
+        - @sku.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :price_max
+    = f.text_field :price_max
+  .field
+    = f.label :price_min
+    = f.text_field :price_min
+  .field
+    = f.label :image
+    = f.text_field :image
+  .actions
+    = f.submit 'Save'

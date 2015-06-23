@@ -1,0 +1,15 @@
+%h1 Προϊόντα
+%table.grid
+  %tr
+    %td.skus
+      = render partial: "big_list", locals: {skus: @skus, userskus: @userskus}
+    %td.userskus
+      %p.caption τα προϊόντα μου
+      -if current_user && !@userskus.empty?
+        = render partial: "small_list", locals: {skus: @skus, userskus: @userskus}
+      -elsif current_user && @userskus.empty?
+        %p.no-products προσθέστε προϊόντα
+      -else
+        %p.no-products συνδεθείτε ή εγγραφείτε για να προσθέσετε προϊόντα
+    
+.modal

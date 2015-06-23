@@ -1,0 +1,42 @@
+%p#notice= notice
+
+%h1 Εγγραφή
+= form_for @user do |f|
+  - if @user.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
+  %table.credentials
+    %tr
+      %td
+        = f.label :Όνομα_χρήστη
+      %td
+        = f.text_field :name
+      %td
+        δώστε το όνομα χρήστη (username)
+    %tr
+      %td
+        = f.label :Ολόκληρο_όνομα
+      %td
+        = f.text_field :full_name
+      %td
+        δώστε το όνομά σας 
+    %tr
+      %td
+        = f.label :Κωδικός
+      %td
+        = f.password_field :password
+      %td
+    %tr
+      %td
+        = f.label :Επιβεβαίωση_κωδικού
+      %td
+        = f.password_field :password_confirmation
+      %td
+    %tr
+      %td
+      %td
+        = f.submit 'Εγγραφή'
+      %td

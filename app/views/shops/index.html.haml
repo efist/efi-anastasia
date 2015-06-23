@@ -1,0 +1,30 @@
+%h1 Listing shops
+
+%table
+  %tr
+    %th Name
+    %th Link
+    %th Image url
+    %th free shipping
+    %th free shipping from
+    %th shipping min price
+    %th reviews count
+    %th review score
+  - @shops.each do |shop|
+    %tr
+      %td= shop.name
+      %td= shop.link
+      %td
+        %img{src: shop.image_url}
+      %td= shop.free_shipping
+      %td= shop.free_shipping_from
+      %td= shop.shipping_min_price
+      %td= shop.reviews_count
+      %td= shop.review_score
+      %td= link_to 'Show', shop
+      %td= link_to 'Edit', edit_shop_path(shop)
+      %td= link_to 'Destroy', shop, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Shop', new_shop_path

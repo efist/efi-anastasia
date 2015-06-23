@@ -1,0 +1,12 @@
+%table
+  - userskus.each do |sku|
+    %tr
+      %td.image
+        %img{src: sku.image, height: '50'}
+      %td.name
+        =sku.name
+    %tr
+      %td.button
+        %a.remove.button{href: "/list/remove/?id=#{sku.id}"} remove
+      %td.price #{sku.price_min}€ - #{sku.price_max}€
+%a.inspect{href: "/users/#{current_user.id}"} επισκόπηση

@@ -1,0 +1,55 @@
+// Place all the styles related to the skus controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+td.skus {
+  vertical-align: top;
+  li {
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 350px;
+    p { text-align:center;}
+    
+    p.name { font-size: 16px;}
+    
+  }
+}
+
+table.grid{
+  max-width: 96%;
+  margin: auto;
+}
+td.userskus{
+  min-width: 300px;
+
+  vertical-align: top;
+  text-align:center;
+  td.price{ font-size: 13px;}
+  td.button, td.price { border-bottom: 1px dashed grey; }
+  table{
+    border: 1px dashed grey;
+  }
+}
+
+.caption{
+  font-size: 25px;
+  color: dodgerblue;
+  margin: 10px;
+}
+
+a.inspect{
+  font-size: 25px;
+  color: dodgerblue;
+  margin-top: 60px;
+}
+
+p.no-products{
+padding: 70px 10px 70px 10px;
+line-height: 2;
+border: 1px dashed grey;
+font-size: 22px;
+color: lightblue;
+}
+
