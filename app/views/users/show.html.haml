@@ -1,7 +1,10 @@
 %h1 Επιθεώρηση προϊόντων μου
 
+/ O users_controller μας δίνει τις μεταβλητές fastest_products, cheapest_products και common_shop_products
+
 %h2 Διαθεσιμότητα
 %p.explain Επιλογή καταστημάτων με κριτήριο πρώτα τη διαθεσιμότητά τους και μετά την τιμή.
+/ καλεί το partial _products.html.haml από τα views των products με παράμετρο τον πίνακα @fastests_products
 = render partial: "products/products", locals: {products: @fastest_products}
 %p.cost
   Το κόστος είναι:
